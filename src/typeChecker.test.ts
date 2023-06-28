@@ -19,3 +19,21 @@ test("binary expressions", () => {
     "Operator '+' cannot be applied to types 'number' and 'boolean'",
   ]);
 });
+
+test("complex code", () => {
+  const annotations = typeChecker(`
+    type Money = number;
+    
+    interface Dto {}
+    
+    function someComplexBusiness(dto: Dto): Money {
+      if (Math.random()) {
+        return 2 + true;
+      }
+    }
+  `);
+
+  expect(annotations.map(getMessage)).toStrictEqual([
+    "Operator '+' cannot be applied to types 'number' and 'boolean'",
+  ]);
+});
