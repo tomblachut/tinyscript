@@ -5,6 +5,7 @@ import { todoType, withCache } from "./utils";
 
 export interface CheckContext {
   typeCache: WeakMap<Node, Type>;
+
   annotate(node: Node, message: string): void;
 }
 
@@ -16,7 +17,7 @@ export function check(node: Node, context: CheckContext) {
   }
 
   function getTypeImpl(node: Node): Type {
-    return getLiteralType(node) ?? todoType();
+    return getLiteralType(node) ?? getBinaryExpressionType(node) ?? todoType();
   }
 
   function getLiteralType(node: Node): Type | undefined {
@@ -28,6 +29,25 @@ export function check(node: Node, context: CheckContext) {
           return new NumberType();
         case "StringLiteral":
           return new StringType();
+      }
+    }
+    return undefined;
+  }
+
+  function getBinaryExpressionType(node: Node): Type | undefined {
+    if (types.isBinaryExpression(node)) {
+      switch (node.operator) {
+        case "+": {
+          const left = getType(node.left);
+          const right = getType(node.right);
+          if (left instanceof StringType || right instanceof StringType) {
+            return new StringType();
+          }
+          if (left instanceof NumberType || right instanceof NumberType) {
+            return new NumberType();
+          }
+          return todoType();
+        }
       }
     }
     return undefined;
