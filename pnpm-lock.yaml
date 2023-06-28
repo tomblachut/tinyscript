@@ -10,7 +10,7 @@ specifiers:
   jest: ^28.1.0
   prettier: ^2.8.8
   ts-jest: ^28.0.2
-  typescript: ^4.6.4
+  typescript: ^4.9.5
 
 dependencies:
   '@babel/parser': 7.17.10
@@ -19,12 +19,12 @@ dependencies:
   esbuild: 0.14.38
   esbuild-runner: 2.2.1_esbuild@0.14.38
   prettier: 2.8.8
-  typescript: 4.6.4
+  typescript: 4.9.5
 
 devDependencies:
   '@types/jest': 27.5.0
   jest: 28.1.0
-  ts-jest: 28.0.2_k4xvjffwcpckmnpd5fcvxvnd24
+  ts-jest: 28.0.2_ynpm33yrg5c6kkqmll7r2facei
 
 packages:
 
@@ -2403,7 +2403,7 @@ packages:
       is-number: 7.0.0
     dev: true
 
-  /ts-jest/28.0.2_k4xvjffwcpckmnpd5fcvxvnd24:
+  /ts-jest/28.0.2_ynpm33yrg5c6kkqmll7r2facei:
     resolution: {integrity: sha512-IOZMb3D0gx6IHO9ywPgiQxJ3Zl4ECylEFwoVpENB55aTn5sdO0Ptyx/7noNBxAaUff708RqQL4XBNxxOVjY0vQ==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
@@ -2434,7 +2434,7 @@ packages:
       lodash.memoize: 4.1.2
       make-error: 1.3.6
       semver: 7.3.7
-      typescript: 4.6.4
+      typescript: 4.9.5
       yargs-parser: 20.2.9
     dev: true
 
@@ -2452,8 +2452,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /typescript/4.6.4:
-    resolution: {integrity: sha512-9ia/jWHIEbo49HfjrLGfKbZSuWo9iTMwXO+Ca3pRsSpbsMbc7/IU8NKdCZVRRBafVPGnoJeFL76ZOAA84I9fEg==}
+  /typescript/4.9.5:
+    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
     engines: {node: '>=4.2.0'}
     hasBin: true
 
