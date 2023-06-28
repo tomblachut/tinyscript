@@ -44,6 +44,10 @@ export function check(node: Node, context: CheckContext) {
             return new StringType();
           }
           if (left instanceof NumberType || right instanceof NumberType) {
+            if (left.constructor != right.constructor) {
+              const message = `Operator '+' cannot be applied to types '${left.printType()}' and '${right.printType()}'`;
+              context.annotate(node, message);
+            }
             return new NumberType();
           }
           return todoType();
