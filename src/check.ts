@@ -52,6 +52,34 @@ export function check(node: Node, context: CheckContext) {
           }
           return todoType();
         }
+        case "-":
+        case "/":
+        case "%":
+        case "*":
+        case "**":
+        // bitwise
+        case "&":
+        case "|":
+        case ">>":
+        case ">>>":
+        case "<<":
+        case "^": {
+          return new NumberType();
+        }
+        // logical
+        case "==":
+        case "===":
+        case "!=":
+        case "!==":
+        // structural
+        case "in":
+        case "instanceof":
+        // relational
+        case ">":
+        case "<":
+        case ">=":
+        case "<=":
+          return new BooleanType();
       }
     }
     return undefined;
